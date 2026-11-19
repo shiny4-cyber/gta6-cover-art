@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunset Strip — GTA-style cover art from your own photo</title>
+<meta name="description" content="Turn a photo and a caption into a multi-panel, neon-sunset cover poster. Runs offline in your browser; the photo never leaves the machine.">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>Sunset Strip</h1>
+        <p>Cover art from your own photo, made offline</p>
+      </div>
+    </div>
+    <p class="keys">
+      <span><b>Drag</b> the cover to reframe</span>
+      <span><b>+</b> / <b>−</b> zoom a panel</span>
+      <span><b>⌘E</b> export</span>
+    </p>
+  </header>
+
+  <div class="shell">
+
+    <aside class="controls" aria-label="Editor controls">
+
+      <section class="group">
+        <h2>Photos</h2>
+        <div class="drop" id="drop" tabindex="0" role="button" aria-describedby="drop-note">
+          <strong>Drop photos here</strong>
+          <span id="drop-note">or click to choose. Nothing is uploaded.</span>
+        </div>
+        <input type="file" id="file" accept="image/*" multiple hidden>
+        <ul class="thumbs" id="thumbs" aria-label="Photos added"></ul>
+      </section>
+
+      <section class="group">
+        <h2><label for="caption">Caption</label></h2>
+        <input type="text" id="caption" maxlength="44" value="SUNSET HEIST" autocomplete="off" spellcheck="false">
+        <p class="hint">Auto-fitted to the band: long words shrink, never overflow.</p>
+      </section>
+
+      <section class="group">
+        <h2>Palette</h2>
+        <div class="chips" id="palettes" role="radiogroup" aria-label="Colour grade"></div>
+      </section>
+
+      <section class="group">
+        <h2><label for="layout">Panels</label></h2>
+        <select id="layout"></select>
+        <div id="inspector" class="inspector"></div>
+      </section>
+
+      <section class="group">
+        <h2><label for="size">Size</label></h2>
+        <select id="size"></select>
+        <p class="hint" id="size-note"></p>
+      </section>
+
+      <div class="actions">
+        <button type="button" id="export" class="primary">Export PNG</button>
+        <p class="status" id="status" role="status" aria-live="polite">Ready.</p>
+      </div>
+
+    </aside>
+
+    <main class="stage">
+      <div class="stage-inner" id="stage-inner">
+        <canvas id="cover" tabindex="0" aria-label="Cover preview. Drag to reframe the selected panel; plus and minus to zoom it; arrow keys to nudge."></canvas>
+      </div>
+      <p class="readout" id="readout"></p>
+    </main>
+
+    <aside class="result" id="result" hidden aria-label="Export result">
+      <h2>Exported</h2>
+      <img id="result-img" alt="The exported cover, as the PNG the app wrote">
+      <p class="result-meta" id="result-meta"></p>
+      <button type="button" id="result-download" class="ghost">Download again</button>
+      <p class="hint">This is the exported file itself, not a preview of it.</p>
+    </aside>
+
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

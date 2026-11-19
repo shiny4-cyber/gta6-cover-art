@@ -1,0 +1,26 @@
+[
+  {
+    "name": "1-cover.jpg",
+    "query": "?shot=cover&photos=boulevard,rider,coast&caption=Sunset%20Heist&palette=sunset&layout=triptych&size=wide",
+    "w": 1280,
+    "h": 720
+  },
+  {
+    "name": "2-editor.jpg",
+    "query": "?shot=editor&photos=boulevard,rider,coast&caption=Sunset%20Heist&palette=sunset&layout=triptych&size=print",
+    "w": 1280,
+    "h": 800
+  },
+  {
+    "name": "3-title.jpg",
+    "query": "?shot=detail&photos=boulevard,rider,coast&caption=Sunset%20Heist&palette=sunset&layout=triptych&size=print",
+    "w": 1280,
+    "h": 720
+  },
+  {
+    "name": "4-neon-night.jpg",
+    "query": "?shot=result&photos=boulevard,neon,rider&caption=Neon%20Nights&palette=night&layout=triptych&size=portrait",
+    "w": 1280,
+    "h": 800
+  }
+]
